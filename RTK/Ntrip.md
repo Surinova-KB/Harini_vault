@@ -1,0 +1,1 @@
+Ntrip service provide correction data all around without a base station.
