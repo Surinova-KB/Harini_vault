@@ -16,3 +16,4 @@ ROS Master - Master node which is controlling all the process and function , dat
 Service - A request send by one node to other , other node responds only when the service                             request is  complete.
 
 Action - An action to complete a goal set by one node to other , other nodes feeds real time feed                 back until goal is achieved and result once the goal is achieved.  
+
