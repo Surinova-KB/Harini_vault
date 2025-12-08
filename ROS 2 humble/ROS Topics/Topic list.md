@@ -111,9 +111,9 @@ Published by `joint_state_broadcaster`.
  **➤ `/goal_pose`**
  - For sending navigation goals.
     
-**➤ `/global_costmap/**`
+**➤ `/global_costmap/
 
- **➤ `/local_costmap/**`**
+ **➤ `/local_costmap/**`
 
 **➤ `/initialpose`**
 

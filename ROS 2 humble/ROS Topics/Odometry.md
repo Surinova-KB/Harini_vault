@@ -34,3 +34,41 @@ Working :
                               ==From nothing (no encoders, no IMU)“fake odometry"= integrate your own cmd_vel  (this isn't real feedback, just expected arbitrary values)==
 
 
+## Covariance:
+
+ 
+  Covariance = uncertainty
+  It tells other ROS systems **how reliable the odometry is**.
+
+  # **Significance**:
+
+ - Used by EKF / robot localization to fuse sensors correctly
+    
+ - Used by SLAM and AMCL for consistent localization
+    
+ - Used by Nav2 to assess motion reliability
+ 
+ - Prevents noisy odometry from corrupting pose estimation
+
+
+  It represents a 6×6 matrix (36 values) describing uncertainty in:  **X, Y , Z, roll, pitch , yaw**
+
+**Meaning**:
+
+- **Small value** → very confident (accurate)
+    
+- **Large value** → not confident (noisy or unused dimension)
+    
+- **Huge value** (e.g., 99999) → “ignore this dimension”
+
+Covariance is 6x6 array, to flatten it to 1 D array and allocated memory 
+i - size required for each value so memory is i+1
+
+| i   | diagonal index = 7×i |
+| --- | -------------------- |
+| 0   | 0                    |
+| 1   | 7                    |
+| 2   | 14                   |
+| 3   | 21                   |
+| 4   | 28                   |
+| 5   | 35                   |
