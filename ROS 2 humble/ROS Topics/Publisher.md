@@ -16,3 +16,7 @@ Realtime-publisher warpper:
 
 
 The controller publishes _via the realtime publisher_ → which pushes to the underlying normal publisher safely.
+
+Every node or controller has just one realtime publisher buffer . This buffer publishes to all the topic the node intend to communicate with.
+
+But a subscriber is unique, each publisher interacts with only one type of topic and message.
